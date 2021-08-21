@@ -13,7 +13,7 @@ for i in "nginx/proxy-confs/swag-status-mod.subfolder.conf" "www/status/index.ph
     fi
 done
 if [ -n "$mod_files_changed" ]; then
-    echo "**** The following swag-status-mod confs have different version dates than the defaults that are shipped. ****"
+    echo "**** The following swag-status-mod files have different version dates than the defaults that are shipped. ****"
     echo "**** To update them to the latest defaults shipped within the mod, run 'docker exec swag rm -rf /config/www/status' and restart the container. ****"
     echo "**** If they are user customized, check the date version at the top and compare to the upstream changelog. ****"
     echo -e "${mod_files_changed}"
