@@ -2,7 +2,8 @@
 
 echo "Applying the SWAG status mod..."
 
-if [ ! -d /config/www/status ]; then
+if [ ! -d /config/swag-status-mod ]; then
+    mkdir -p /config/swag-status-mod
     mkdir -p /config/www/status
     cp -f /swag-status-mod/index.php /config/www/status/
     cp -f /swag-status-mod/swag-status-mod.subfolder.conf /config/nginx/proxy-confs/
@@ -14,9 +15,10 @@ for i in "nginx/proxy-confs/swag-status-mod.subfolder.conf" "www/status/index.ph
 done
 if [ -n "$mod_files_changed" ]; then
     echo "**** The following swag-status-mod files have different version dates than the defaults that are shipped. ****"
-    echo "**** To update them to the latest defaults shipped within the mod, run 'docker exec swag rm -rf /config/www/status' and restart the container. ****"
+    echo "**** To update them to the latest defaults shipped within the mod, run 'docker exec swag rm -rf /config/swag-status-mod' and restart the container. ****"
     echo "**** If they are user customized, check the date version at the top and compare to the upstream changelog. ****"
     echo -e "${mod_files_changed}"
 fi
-chmod +x /swag-status-mod/swag-status.py
+cp -f /swag-status-mod/swag-status.py /config/swag-status-mod
+chmod +x /config/swag-status-mod/swag-status.py
 echo "Applied the SWAG status mod"
