@@ -10,11 +10,11 @@ If adding multiple mods, enter them in an array separated by |, such as DOCKER_M
 
 ## Upgrade / Reinstall
 
-Run `docker exec swag rm -rf /config/www/status` and restart swag.
+Run `docker exec swag rm -rf /config/swag-status-mod` and restart swag.
 
 ## Remove
 
-Run `docker exec swag rm -rf /config/www/status /config/nginx/proxy-confs/swag-status-mod.subfolder.conf`
+Run `docker exec swag rm -rf /config/swag-status-mod /config/www/status /config/nginx/proxy-confs/swag-status-mod.subfolder.conf`
 
 ## Example
 ![example](.assets/example.png)
