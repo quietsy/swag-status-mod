@@ -7,7 +7,7 @@ if [ ! -d /config/www/status ]; then
     cp -f /swag-status-mod/index.php /config/www/status/
     cp -f /swag-status-mod/swag-status-mod.subfolder.conf /config/nginx/proxy-confs/
 fi
-for i in "nginx/proxy-confs/swag-status-mod.subfolder.conf" "www/status/index.php" do
+for i in "nginx/proxy-confs/swag-status-mod.subfolder.conf" "www/status/index.php"; do
     if [ "$(sed -nE 's|## Version ([0-9]{4}\/[0-9]{2}\/[0-9]{2}).*|\1|p' /config/${i})" != "$(sed -nE 's|## Version ([0-9]{4}\/[0-9]{2}\/[0-9]{2}).*|\1|p' /swag-status-mod/$(basename ${i}))" ]; then
         mod_files_changed="${i}\n${mod_files_changed}"
     fi
