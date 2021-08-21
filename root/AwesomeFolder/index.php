@@ -60,7 +60,7 @@
 
         .tooltip .tooltiptext {
             visibility: hidden;
-            width: 320px;
+            white-space: nowrap;
             background-color: black;
             color: #fff;
             text-align: left;
