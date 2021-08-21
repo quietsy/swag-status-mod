@@ -1,3 +1,4 @@
+<!-- ## Version 2021/08/21 -->
 <html>
     <head>
         <title>Welcome to your SWAG instance</title>
@@ -106,7 +107,7 @@
                     </tr>
                     </thead>
                     <?php
-                        $output = shell_exec("python3 /config/swag-status/swag-status.py");
+                        $output = shell_exec("python3 /swag-status-mod/swag-status.py");
                         $results = json_decode($output);
                         foreach($results as $result => $data){
                     ?>
