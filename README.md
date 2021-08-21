@@ -8,5 +8,13 @@ In SWAG's docker arguments, set an environment variable DOCKER_MODS=ghcr.io/quie
 
 If adding multiple mods, enter them in an array separated by |, such as DOCKER_MODS=ghcr.io/quietsy/swag-status-mod:latest|ghcr.io/linuxserver/mods:some-other-mod
 
+## Upgrade / Reinstall
+
+Run `docker exec swag rm -rf /config/swag-status` and restart swag.
+
+## Remove
+
+Run `docker exec swag rm -rf /config/swag-status /config/www/status /config/nginx/proxy-confs/swag-status-mod.subfolder.conf`
+
 ## Example
 ![example](.assets/example.png)
