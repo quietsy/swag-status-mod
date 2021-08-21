@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bash
+
+echo "Applying the SWAG status mod..."
+
+if [ ! -d /config/swag-status ]; then
+    mkdir -p /config/swag-status
+    cp -f /AwesomeFolder/swag-status.py /config/swag-status/
+    chmod +x /config/swag-status/swag-status.py
+    mkdir -p /config/www/status
+    cp -f /AwesomeFolder/index.php /config/www/status/
+    cp -f /AwesomeFolder/status-mod.subfolder.conf /config/nginx/proxy-confs/
+fi
+echo "Applied the SWAG status mod"
