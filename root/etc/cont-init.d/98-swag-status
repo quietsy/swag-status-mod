@@ -8,6 +8,6 @@ if [ ! -d /config/swag-status ]; then
     chmod +x /config/swag-status/swag-status.py
     mkdir -p /config/www/status
     cp -f /AwesomeFolder/index.php /config/www/status/
-    cp -f /AwesomeFolder/status-mod.subfolder.conf /config/nginx/proxy-confs/
+    cp -f /AwesomeFolder/swag-status-mod.subfolder.conf /config/nginx/proxy-confs/
 fi
 echo "Applied the SWAG status mod"
